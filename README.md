@@ -6,10 +6,12 @@ It first pulls down the last eight static rainfall radar images from the met eir
 
 As there are eight images, taken 15 minutes apart, the gif represents a two hour time span. 
 
-## Dependencies
+### Dependencies
 
 * ImageMagick
 * mpv
 * curl
 
 The script is POSIX compliant and has been tested and works in the z shell on Arch Linux. 
+
+It will need to be chmod'd to give it executable privileges and put in a folder that is in the PATH environment.  
