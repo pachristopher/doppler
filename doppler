@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+# script to get current time on quarter hour:
+eval $(date +Y=%Y\;m=%m\;d=%d\;H=%H\;M=%M)
+[[ "$M" < "15" ]] && M=00 # cater for octal clash
+M=$(((M/15)*15))
+((M==0)) && M=00 # the math returns 0, so make it 00  
+now=$Y$m$d$H$M
+
+# get 8 previous radar images from met.ie with a loop
+time=$now
+for i in {1..8}
+do
+    mins=${time: -2}
+    if [ $mins == 00 ]
+    then
+        time=$((time-55)) # if time is on the hour, subtract 55 mins instead of 15
+    else
+        time=$((time-15))
+    fi
+    url="https://www.met.ie/images/radar/web17_radar15_$time.png"
+    curl $url -o "img$i.png"
+done
+
+# stitch the pngs together into animated gif using convert 
+convert -delay 100 *.png radar.gif
+
+# use mpv to play the animated gif
+mpv --play-dir=backward radar.gif
+
