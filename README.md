@@ -12,4 +12,4 @@ As there are eight images, taken 15 minutes apart, the gif represents a two hour
 * mpv
 * curl
 
-It has been tested and works in the z shell on Arch Linux. It probably works in other shells but I haven't tested it. 
+The script is POSIX compliant and has been tested and works in the z shell on Arch Linux. 
