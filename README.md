@@ -6,7 +6,7 @@ It first pulls down the last eight static rainfall radar images from the met eir
 
 As there are eight images, taken 15 minutes apart, the gif represents a two hour time span. 
 
-# Dependencies
+## Dependencies
 
 * ImageMagick
 * mpv
