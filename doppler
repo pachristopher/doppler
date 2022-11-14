@@ -28,3 +28,6 @@ convert -delay 100 *.png -loop 3 radar.gif
 # use mpv to play the animated gif
 mpv --play-dir=backward radar.gif
 
+for F in *.png *.gif ; do
+    echo "$F"
+done | xargs rm
