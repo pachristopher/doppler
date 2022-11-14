@@ -19,16 +19,16 @@ do
         time=$((time-15))
     fi
     url="https://www.met.ie/images/radar/web17_radar15_$time.png"
-    curl $url -o "img$i.png"
+    curl $url -o "doppimg$i.png"
 done
 
 # stitch the pngs together into animated gif using convert 
-convert -delay 100 *.png -loop 3 radar.gif
+convert -delay 100 doppimg*.png -loop 3 radar.gif
 
 # use mpv to play the animated gif
 mpv --play-dir=backward radar.gif
 
 # clean up the directory
-for F in *.png *.gif ; do
+for F in doppimg*.png radar.gif ; do
     echo "$F"
 done | xargs rm
