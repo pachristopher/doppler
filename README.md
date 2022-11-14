@@ -15,3 +15,5 @@ As there are eight images, taken 15 minutes apart, the gif represents a two hour
 The script is POSIX compliant and has been tested and works in the z shell on Arch Linux. 
 
 It will need to be chmod'd to give it executable privileges and put in a folder that is in the PATH environment.  
+
+As part of the cleanup routine, it assumes that there are no files named doppimg*.png or radar.gif that are critical and cannot be deleted from the current directory.
