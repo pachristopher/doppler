@@ -15,5 +15,3 @@ As there are eight images, taken 15 minutes apart, the gif represents a two hour
 The script is POSIX compliant and has been tested and works in the z shell on Arch Linux. 
 
 It will need to be chmod'd to give it executable privileges and put in a folder that is in the PATH environment.  
-
-To note is that it will create and leave behind 8 .png files and one .gif file in the directory where the script is run from. These comprise about 2M in total and will be overwritten each time the script is run.
